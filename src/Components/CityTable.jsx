@@ -1,7 +1,8 @@
+// CityTable.jsx
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Autocomplete from './AutoComplete.jsx';
-import ApiService from '../Services/ApiService.js';
+import Autocomplete from './AutoComplete';
+import ApiService from '../Services/ApiService';
 
 const CityTable = () => {
     const [cities, setCities] = useState([]);

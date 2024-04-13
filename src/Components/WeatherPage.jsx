@@ -1,15 +1,8 @@
-// WeatherPage.js
+// WeatherPage.jsx
 import React, { useState, useEffect } from 'react';
 import WeatherCard from './WeatherCard';
 import ApiService from '../Services/ApiService';
 import { useParams } from 'react-router-dom';
-import styled from 'styled-components';
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
 const WeatherPage = () => {
   const { lat, lon } = useParams();
@@ -28,13 +21,13 @@ const WeatherPage = () => {
   }, [lat, lon]);
 
   return (
-    <Container>
+    <div className="mx-auto max-w-lg">
       {weatherData ? (
         <WeatherCard data={weatherData} />
       ) : (
         <p>Loading weather...</p>
       )}
-    </Container>
+    </div>
   );
 };
 

@@ -1,22 +1,22 @@
-// Autocomplete.js
+// Autocomplete.jsx
 import React, { useState } from 'react';
 
 const Autocomplete = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [inputValue, setInputValue] = useState('');
 
   const handleChange = (e) => {
-    setSearchTerm(e.target.value);
+    setInputValue(e.target.value);
     onSearch(e.target.value);
   };
 
   return (
-    <div className="mb-4">
+    <div className="mt-4">
       <input
         type="text"
-        value={searchTerm}
+        value={inputValue}
         onChange={handleChange}
-        placeholder="Search city..."
-        className="w-full p-2 border rounded"
+        placeholder="Search for a city..."
+        className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
       />
     </div>
   );
