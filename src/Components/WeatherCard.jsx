@@ -1,3 +1,4 @@
+// Import'ss
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTint, faWind, faCloud, faThermometerHalf, faEye, faCloudSun, faSun } from '@fortawesome/free-solid-svg-icons';
