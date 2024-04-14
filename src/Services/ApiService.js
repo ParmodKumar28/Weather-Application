@@ -10,6 +10,7 @@ const ApiService = {
   },
   fetchWeather: async (lat, lon) => {
     try {
+      console.log(`api key ${API_KEY}`);
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
       );
