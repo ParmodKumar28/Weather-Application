@@ -44,13 +44,13 @@ const CityTable = () => {
                             {/* Headings row */}
                             <tr className=''>
                                 {/* City name */}
-                                <th className="px-2 sm:px-6 py-3 text-left text-sm font-medium text-gray-600 uppercase tracking-wider">City Name</th>
+                                <th className="px-2 sm:px-6 py-3 text-left text-sm font-extrabold text-gray-600 uppercase tracking-wider">City Name</th>
                                 {/* Country */}
-                                <th className="px-2 sm:px-6 py-3 text-left text-sm font-medium text-gray-600 uppercase tracking-wider">Country</th>
+                                <th className="px-2 sm:px-6 py-3 text-left text-sm font-extrabold text-gray-600 uppercase tracking-wider">Country</th>
                                 {/* Population */}
-                                <th className="px-2 sm:px-6 py-3 text-left text-sm font-medium text-gray-600 uppercase tracking-wider">Population</th>
+                                <th className="px-2 sm:px-6 py-3 text-left text-sm font-extrabold text-gray-600 uppercase tracking-wider">Population</th>
                                 {/* Timezone */}
-                                <th className="px-2 sm:px-6 py-3 text-left text-sm font-medium text-gray-600 uppercase tracking-wider">Timezone</th>
+                                <th className="px-2 sm:px-6 py-3 text-left text-sm font-extrabold text-gray-600 uppercase tracking-wider">Timezone</th>
                             </tr>
                         </thead>
                         {/* Table body */}
@@ -61,7 +61,7 @@ const CityTable = () => {
                                 <tr key={city.geoname_id} className={`${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-50'} hover:bg-blue-100 transition duration-300 ease-in-out`}>
                                     {/* City name with link so that on click it's weather page opens passing params here */}
                                     <td
-                                        className="px-2 sm:px-6 py-4 whitespace-nowrap"
+                                        className="px-2 sm:px-6 py-4 whitespace-nowrap font-medium"
                                         // Open weather page in new tab on right-click
                                         onContextMenu={(e) => {
                                             e.preventDefault(); // Prevent default context menu

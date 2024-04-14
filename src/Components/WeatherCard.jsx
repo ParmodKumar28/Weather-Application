@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTint, faWind, faCloud, faThermometerHalf, faEye, faCloudSun, faSun, faCloudRain, faSnowflake, faBolt, faSmog } from '@fortawesome/free-solid-svg-icons';
+import { faTint, faWind, faCloud, faThermometerHalf, faEye, faCloudSun, faSun } from '@fortawesome/free-solid-svg-icons';
 
 const WeatherCard = ({ data }) => {
   // Convert temperature from Kelvin to Celsius

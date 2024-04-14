@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCloudSun } from "@fortawesome/free-solid-svg-icons";
 import CityTable from "./Components/CityTable";
 import WeatherPage from "./Components/WeatherPage";
 import { Link } from "react-router-dom";
@@ -12,7 +14,9 @@ function App() {
         {/* Header */}
         <header className="bg-blue-500 text-white py-4 text-center z-50">
           <Link to="/">
-            <h1 className="text-2xl font-bold">Weather Forecast App</h1>
+            <h1 className="text-2xl font-bold">
+              <FontAwesomeIcon icon={faCloudSun} className="text-4xl mr-2 animate-pulse" /> Weather Forecast App
+            </h1>
           </Link>
         </header>
 
