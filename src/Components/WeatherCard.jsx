@@ -2,7 +2,6 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTint, faWind, faCloud, faThermometerHalf, faEye, faCloudSun, faSun, faCloudRain, faSnowflake, faBolt, faSmog } from '@fortawesome/free-solid-svg-icons';
 
-
 const WeatherCard = ({ data }) => {
   // Convert temperature from Kelvin to Celsius
   const temperature = Math.round(data.main?.temp - 273.15);
@@ -112,7 +111,7 @@ const WeatherCard = ({ data }) => {
 
   // Card component for displaying weather details
   const WeatherDetailCard = ({ title, value, icon }) => (
-    <div className={`bg-gray-200 bg-opacity-95 rounded-lg shadow-lg p-4 text-center flex-1 mr-4 hover:scale-110 transition-all`}>
+    <div className={`bg-gray-200 bg-opacity-95 rounded-lg shadow-lg p-4 text-center flex-1 mr-4 mb-4 hover:scale-110 transition-all`}>
       <FontAwesomeIcon icon={icon} className="text-xl text-gray-700 mb-2" />
       <h3 className={`text-lg font-semibold mb-2 ${getTextColor()}`}>{title}</h3>
       <p className={`text-xl ${getTextColor()}`}>{value}</p>
@@ -122,8 +121,8 @@ const WeatherCard = ({ data }) => {
   // Returning JSX
   return (
     // Weather card container with dynamic background image
-    <div className="w-full flex justify-center  h-screen" style={backgroundStyle}>
-      <div className={`max-w-full rounded-lg overflow-hidden shadow-2xl ${getBackgroundColor()} bg-opacity-35 backdrop-filter p-8 m-4 transform transition-transform hover:scale-100 hover:shadow-xl flex flex-col`}>
+    <div className="w-full flex justify-center min-h-screen h-auto" style={backgroundStyle}>
+      <div className={`max-w-full rounded-lg overflow-hidden shadow-2xl ${getBackgroundColor()} bg-opacity-35 backdrop-filter p-8 m-4 transform transition-transform hover:scale-100 hover:shadow-xl flex flex-col items-center`}>
         <div className="text-center mb-8">
           {/* Image */}
           <img src={weatherIcon} alt={description} className="w-24 h-24 mx-auto mb-4" />
@@ -135,7 +134,7 @@ const WeatherCard = ({ data }) => {
           <p className={`text-6xl ${getTextColor()}`}>{description}</p>
         </div>
         {/* Details */}
-        <div className="flex flex-wrap justify-around ">
+        <div className="flex flex-wrap justify-around w-full">
           {/* Temperature */}
           <WeatherDetailCard title="Feels Like" value={`${feelsLike}°C`} icon={faThermometerHalf} />
           <WeatherDetailCard title="Min Temperature" value={`${minTemp}°C`} icon={faThermometerHalf} />
