@@ -33,7 +33,7 @@ const WeatherPage = () => {
   // Returning JSX
   return (
     // Weather Page container
-    <div className="w-screen">
+    <div className="">
       {loading ? (
         <div className="flex justify-center items-center h-screen">
           {/* Loader */}

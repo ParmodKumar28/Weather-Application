@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CityTable from "./Components/CityTable";
 import WeatherPage from "./Components/WeatherPage";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
@@ -10,7 +11,9 @@ function App() {
       <div className="relative bg-gray-100 min-h-screen">
         {/* Header */}
         <header className="bg-blue-500 text-white py-4 text-center z-50">
-          <h1 className="text-2xl font-bold">Weather Forecast App</h1>
+          <Link to="/">
+            <h1 className="text-2xl font-bold">Weather Forecast App</h1>
+          </Link>
         </header>
 
         {/* Route's */}
