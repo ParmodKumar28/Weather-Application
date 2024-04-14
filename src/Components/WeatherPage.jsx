@@ -1,43 +1,42 @@
-// Import's
 import React, { useState, useEffect } from 'react';
 import WeatherCard from './WeatherCard';
 import ApiService from '../Services/ApiService';
 import { useParams } from 'react-router-dom';
+import './WeatherPage.css'; // Import the CSS file
 
-// Weather Page functional component which get data for particular city and then render's weather card for that data.
 const WeatherPage = () => {
-  // Extracting params latitude and longitude here
   const { lat, lon } = useParams();
-  // State's
   const [weatherData, setWeatherData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // Side effect's to fetch city weather based on longitude and latitude 
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
         const data = await ApiService.fetchWeather(lat, lon);
-        // Setting state
         setWeatherData(data);
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching weather data:', error);
+        setLoading(false);
       }
     };
     fetchWeatherData();
   }, [lat, lon]);
 
-  // Returing JSX
   return (
-    // Weather page container
     <div className="mx-auto max-w-lg">
-      {/* If weather data loaded then rendering Weather Card componenet with weather data as prop's else showing loading */}
-      {weatherData ? (
+      {loading ? (
+        <div className="flex justify-center items-center h-screen">
+          {/* Loader */}
+          <div className="loader"></div>
+        </div>
+      ) : weatherData ? (
         <WeatherCard data={weatherData} />
       ) : (
-        <p>Loading weather...</p>
+        <p>No weather data available.</p>
       )}
     </div>
   );
 };
 
-// Exporting WeatherPage
 export default WeatherPage;

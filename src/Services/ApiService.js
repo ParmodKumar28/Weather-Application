@@ -1,3 +1,4 @@
+// API'S and API_KEY is here and all api's are called here
 const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
 
 const ApiService = {
@@ -10,7 +11,6 @@ const ApiService = {
   },
   fetchWeather: async (lat, lon) => {
     try {
-      console.log(`api key ${API_KEY}`);
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
       );
