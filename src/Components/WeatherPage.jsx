@@ -1,9 +1,9 @@
 // Import's
 import React, { useState, useEffect } from 'react';
-import WeatherCard from './WeatherCard';
 import ApiService from '../Services/ApiService';
 import { useParams } from 'react-router-dom';
 import './WeatherPage.css';
+import WeatherCard from './WeatherCard';
 
 // Weather Page functional component which fetch's particular city wetaher data and render's weather card.
 const WeatherPage = () => {
