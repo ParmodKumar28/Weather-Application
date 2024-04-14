@@ -60,6 +60,32 @@ const WeatherCard = ({ data }) => {
     }
   };
 
+  // Function to determine background color based on weather description
+  const getBackgroundColor = () => {
+    switch (description.toLowerCase()) {
+      case 'clear sky':
+        return 'bg-blue-200'; // Blue background for clear sky
+      case 'few clouds':
+        return 'bg-gray-300'; // Gray background for few clouds
+      case 'scattered clouds':
+        return 'bg-gray-400'; // Light gray background for scattered clouds
+      case 'broken clouds':
+        return 'bg-gray-500'; // Dark gray background for broken clouds
+      case 'shower rain':
+        return 'bg-blue-500'; // Blue background for shower rain
+      case 'rain':
+        return 'bg-blue-700'; // Dark blue background for rain
+      case 'thunderstorm':
+        return 'bg-purple-700'; // Purple background for thunderstorm
+      case 'snow':
+        return 'bg-white'; // White background for snow
+      case 'mist':
+        return 'bg-gray-100'; // Light gray background for mist
+      default:
+        return 'bg-gray-200'; // Default background color
+    }
+  };
+
   // Inline style for background image
   const backgroundStyle = {
     backgroundImage: getBackgroundImage(),
@@ -83,7 +109,7 @@ const WeatherCard = ({ data }) => {
   return (
     // Weather card container with dynamic background image
     <div className="flex justify-center items-center h-screen" style={backgroundStyle}>
-      <div className="max-w-full rounded-lg overflow-hidden shadow-lg bg-white p-8 m-4 transform transition-transform hover:scale-105 hover:shadow-xl">
+      <div className={`max-w-full rounded-lg overflow-hidden shadow-2xl ${getBackgroundColor()} bg-opacity-95 backdrop-filter p-8 m-4 transform transition-transform hover:scale-105 hover:shadow-xl`}>
         <div className="text-center">
           {/* Image */}
           <img src={weatherIcon} alt={description} className="w-24 h-24 mx-auto mb-4" />

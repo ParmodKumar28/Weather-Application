@@ -60,7 +60,14 @@ const CityTable = () => {
                                 // City data row with odd even different shades background color
                                 <tr key={city.geoname_id} className={`${index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-50'} hover:bg-blue-100 transition duration-300 ease-in-out`}>
                                     {/* City name with link so that on click it's weather page opens passing params here */}
-                                    <td className="px-2 sm:px-6 py-4 whitespace-nowrap">
+                                    <td
+                                        className="px-2 sm:px-6 py-4 whitespace-nowrap"
+                                        // Open weather page in new tab on right-click
+                                        onContextMenu={(e) => {
+                                            e.preventDefault(); // Prevent default context menu
+                                            window.open(`/weather/${city.coordinates.lat}/${city.coordinates.lon}`, '_blank'); // Open link in new tab
+                                        }}
+                                    >
                                         <Link to={`/weather/${city.coordinates.lat}/${city.coordinates.lon}`} className="text-blue-500 hover:underline">{city.name}</Link>
                                     </td>
                                     {/* City country name */}
