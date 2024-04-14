@@ -83,4 +83,5 @@ const CityTable = () => {
     );
 };
 
+// Exporting CityTable
 export default CityTable;

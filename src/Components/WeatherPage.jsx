@@ -39,4 +39,5 @@ const WeatherPage = () => {
   );
 };
 
+// Exporting WeatherPage
 export default WeatherPage;
