@@ -24,7 +24,7 @@ const WeatherPage = () => {
   }, [lat, lon]);
 
   return (
-    <div className="mx-auto max-w-lg">
+    <div className="w-screen">
       {loading ? (
         <div className="flex justify-center items-center h-screen">
           {/* Loader */}
