@@ -1,3 +1,4 @@
+// Import's
 import React from 'react';
 
 const WeatherCard = ({ data }) => {
@@ -71,6 +72,8 @@ const WeatherCard = ({ data }) => {
         return 'bg-gray-400'; // Light gray background for scattered clouds
       case 'broken clouds':
         return 'bg-gray-500'; // Dark gray background for broken clouds
+      case 'overcast clouds':
+        return 'bg-gray-400'; // Gray background for overcast clouds
       case 'shower rain':
         return 'bg-blue-500'; // Blue background for shower rain
       case 'rain':
@@ -141,6 +144,27 @@ const WeatherCard = ({ data }) => {
               <p className={getTextColor()}>Wind Speed:</p>
               <p>{windSpeed} m/s</p>
             </div>
+
+            <div>
+              <p className={getTextColor()}>Cloudiness:</p>
+              <p>{data.clouds.all}%</p>
+            </div>
+            <div>
+              <p className={getTextColor()}>Pressure:</p>
+              <p>{data.main.pressure} hPa</p>
+            </div>
+            <div>
+              <p className={getTextColor()}>Visibility:</p>
+              <p>{data.visibility} meters</p>
+            </div>
+            <div>
+              <p className={getTextColor()}>Sunrise:</p>
+              <p>{new Date(data.sys.sunrise * 1000).toLocaleTimeString()}</p>
+            </div>
+            <div>
+              <p className={getTextColor()}>Sunset:</p>
+              <p>{new Date(data.sys.sunset * 1000).toLocaleTimeString()}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -148,4 +172,5 @@ const WeatherCard = ({ data }) => {
   );
 };
 
+// Export WeatherCard
 export default WeatherCard;
