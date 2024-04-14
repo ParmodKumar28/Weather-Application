@@ -74,7 +74,7 @@ const CityTable = () => {
                         {/* Table headings */}
                         <thead>
                             {/* Headings row */}
-                            <tr className=''>
+                            <tr className='select-none'>
                                 {/* City name */}
                                 <th
                                     className="px-2 sm:px-6 py-3 text-left text-sm font-extrabold text-gray-600 uppercase tracking-wider cursor-pointer"
