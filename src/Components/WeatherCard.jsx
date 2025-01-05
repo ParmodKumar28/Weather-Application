@@ -18,25 +18,25 @@ const WeatherCard = ({ data }) => {
   const getBackgroundImage = () => {
     switch (description.toLowerCase()) {
       case 'clear sky':
-        return 'url(https://source.unsplash.com/featured/?sky)';
+        return 'url(https://images.pexels.com/photos/573238/pexels-photo-573238.jpeg)';
       case 'few clouds':
-        return 'url(https://source.unsplash.com/featured/?cloud)';
+        return 'url(https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg)';
       case 'scattered clouds':
-        return 'url(https://source.unsplash.com/featured/?cloud)';
+        return 'url(https://images.pexels.com/photos/158163/clouds-cloudporn-weather-158163.jpeg)';
       case 'broken clouds':
-        return 'url(https://source.unsplash.com/featured/?cloud)';
+        return 'url(https://images.pexels.com/photos/531756/pexels-photo-531756.jpeg)';
       case 'shower rain':
-        return 'url(https://source.unsplash.com/featured/?rain)';
+        return 'url(https://images.pexels.com/photos/110874/pexels-photo-110874.jpeg)';
       case 'rain':
-        return 'url(https://source.unsplash.com/featured/?rain)';
+        return 'url(https://images.pexels.com/photos/954137/pexels-photo-954137.jpeg)';
       case 'thunderstorm':
-        return 'url(https://source.unsplash.com/featured/?thunderstorm)';
+        return 'url(https://images.pexels.com/photos/1118860/pexels-photo-1118860.jpeg)';
       case 'snow':
-        return 'url(https://source.unsplash.com/featured/?snow)';
+        return 'url(https://images.pexels.com/photos/688660/pexels-photo-688660.jpeg)';
       case 'mist':
-        return 'url(https://source.unsplash.com/featured/?fog)';
+        return 'url(https://images.pexels.com/photos/88212/pexels-photo-88212.jpeg)';
       default:
-        return 'url(https://source.unsplash.com/featured/?weather)';
+        return 'url(https://images.pexels.com/photos/34950/pexels-photo.jpg)';
     }
   };
 
